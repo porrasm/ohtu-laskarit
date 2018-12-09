@@ -13,6 +13,11 @@ public class QueryBuilder {
         this.stack = stack;
     }
 
+
+	public QueryBuilder not(Matcher m) {
+        stack.add(new Not(m));
+        return this;
+    }
     public QueryBuilder playsIn(String team) {
         stack.add(new PlaysIn(team));
         return this;
