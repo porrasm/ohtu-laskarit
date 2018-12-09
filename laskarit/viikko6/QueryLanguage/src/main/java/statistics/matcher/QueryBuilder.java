@@ -25,8 +25,8 @@ public class QueryBuilder {
         stack.add(new HasFewerThan(amount, category));
         return this;
     }
-    public QueryBuilder oneOf(Matcher m1, Matcher m2) {
-        stack.add(new Or(m1, m2));
+    public QueryBuilder oneOf(Matcher... matchers) {
+        stack.add(new Or(matchers));
         return this;
     }
 
